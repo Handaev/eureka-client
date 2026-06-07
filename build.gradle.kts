@@ -23,16 +23,10 @@ extra["springCloudVersion"] = "2025.1.1"
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
-    testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 dependencyManagement {
     imports {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
     }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
 }
